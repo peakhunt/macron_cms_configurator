@@ -86,6 +86,7 @@ const defaultProjectConfig = {
         }
       },
       net: [
+        /*
         {
           protocol: 'MODBUSTCPMaster',
           option: {
@@ -101,7 +102,7 @@ const defaultProjectConfig = {
           },
           targets: [
           ]
-        }
+        } */
       ]
     },
     tanks: [
