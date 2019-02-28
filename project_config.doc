@@ -1,0 +1,70 @@
+# checksum
+a) project JSON.stringfy() SHA256 checksum
+
+# tank virtual channels
+a) level channel        : 10000 + 100 * tank_ndx
+b) pressure channel     : 20000 + 100 * tank_ndx
+c) temperature channel  : 30000 + 100 * tank_ndx
+
+# tank physical channels
+a) radar physical channel : 10000 + 100 * tank_ndx + 50 + radar_ndx
+b) pressure physical channel:  20000 + 100 * tank_ndx + 50 + pressure_ndx
+c) temperature physical channel: 30000 + 100 * tank_ndx + 50 + temperature_ndx
+
+# tank alarms
+a) sensor fault alarm : same number as physical sensor channel number
+b) other alarms : from 1 to increasing
+
+
+# objects per tank
+tank : 
+  a) level channel
+      -> hi alarm
+      -> low alarm
+  b) pressure channel
+      -> hi alarm
+      -> low alarm
+  c) temperature channel
+      -> hi alarm
+      -> low alarm
+  d) radar channels
+      -> sensor fault alarm
+  e) pressure channels
+      -> sensor fault alarm
+  f) temperature channels
+      -> sensor fault alarm
+
+# adding tank
+  a) level channel should be created
+    by default, low alarm should be created
+                hi alarm should be created
+  b) pressure channel should be created
+    by default, low alarm should be created
+                hi alarm should be created
+  c) temperature channel should be created
+    by default, low alarm should be created
+                hi alarm should be created
+
+  1) adding radar sensor
+     - physical channel should be created
+     - sensor fault alarm should be created
+
+  2) deleting a radar sensor
+     - physical channel should be deleted
+     - sensor fault alarm should be deleted
+
+  3) adding pressure sensor
+     - physical channel should be created
+     - sensor fault alarm should be created
+
+  4) deleting pressure sensor
+     - physical channel should be deleted
+     - sensor fault alarm should be deleted
+
+  5) adding temperature sensor
+     - physical channel should be created
+     - sensor fault alarm should be created
+
+  6) deleting temperature sensor   
+     - physical channel should be deleted
+     - sensor fault alarm should be deleted

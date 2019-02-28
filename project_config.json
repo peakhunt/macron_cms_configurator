@@ -1,0 +1,216 @@
+{
+  "checksum": "xxxxxxxxxxx",
+  "project": {
+    "info": {
+      "title": "Blah Blah Blah Project",
+      "vessel": "star ship",
+      "revision": 11,
+      "last_update": "Feb/19/2019 11:23:31"
+    },
+    "configurator": {
+      "version": "0.1"
+    },
+    "io": {
+      "serial": [
+        {
+          "port": "port1",
+          "protocol": "none"
+        },
+        {
+          "port": "port2",
+          "protocol": "none"
+        },
+        {
+          "port": "port3",
+          "protocol": "none"
+        },
+        {
+          "port": "port4",
+          "protocol": "none"
+        }
+      ],
+      "net": [
+      ]
+    },
+    "tanks": [
+      {
+        "name": "STBD1",
+        "height": 40,
+        "radar_strategy": "firstAvail",
+        "pressor_strategy": "average",
+        "level": {
+          "channel": 10000,
+          "strategy": "firstAvail",
+          "sensors": [
+            10050
+          ],
+          "alarms": [
+            1,
+            2,
+            10050
+          ]
+        },
+        "pressure": {
+          "channel": 20000,
+          "strategy": "average",
+          "sensors": [
+            20050
+          ],
+          "alarms": [
+            3,
+            4,
+            20050
+          ]
+        },
+        "temperature": {
+          "channel": 30000,
+          "strategy": "normal",
+          "sensors": [
+            30050,
+            30051,
+            30052
+          ],
+          "alarms": [
+            5,
+            6,
+            30050,
+            30051,
+            30052
+          ]
+        }
+      }
+    ],
+    "channels": {
+      "10000": {
+        "name": "Tank STBD1 Level",
+        "dir": "virtual",
+        "type": "analog"
+      },
+      "10050": {
+        "name": "Tank STBD1 Level Sensor 1",
+        "dir": "in",
+        "type": "analog",
+        "sensor": "radar",
+        "io": ""
+      },
+      "20000": {
+        "name": "Tank STBD1 Pressure",
+        "dir": "virtual",
+        "type": "analog"
+      },
+      "20050": {
+        "name": "Tank STBD1 Pressure Sensor 1",
+        "dir": "in",
+        "type": "analog",
+        "sensor": "pressure",
+        "io": ""
+      },
+      "30000": {
+        "name": "Tank STBD1 Temperature",
+        "dir": "virtual",
+        "type": "analog"
+      },
+      "30050": {
+        "name": "Tank STBD1 Temperature Sensor 1",
+        "dir": "in",
+        "type": "analog",
+        "sensor": "temperature",
+        "io": ""
+      },
+      "30051": {
+        "name": "Tank STBD1 Temperature Sensor 2",
+        "dir": "in",
+        "type": "analog",
+        "sensor": "temperature",
+        "io": ""
+      },
+      "30052": {
+        "name": "Tank STBD1 Temperature Sensor 3",
+        "dir": "in",
+        "type": "analog",
+        "sensor": "temperature",
+        "io": ""
+      }
+    },
+    "alarms": {
+      "1": {
+        "type": "low",
+        "severity": "minor",
+        "name": "Tank STBD1 Level Low",
+        "channel": 10000,
+        "set": 2.5,
+        "delay": 0
+      },
+      "2": {
+        "type": "high",
+        "severity": "major",
+        "name": "Tank STBD1 Radar Level High",
+        "channel": 10000,
+        "set": 39.5,
+        "delay": 0
+      },
+      "3": {
+        "type": "low",
+        "severity": "minor",
+        "name": "Tank STBD1 Pressure Too Low",
+        "channel": 20000,
+        "set": 0.075,
+        "delay": 0
+      },
+      "4": {
+        "type": "high",
+        "severity": "major",
+        "name": "Tank STBD1 Pressure Too High",
+        "channel": 20000,
+        "set": 11.5,
+        "delay": 0
+      },
+      "5": {
+        "type": "low",
+        "severity": "minor",
+        "name": "Tank STBD1 Temperature Too Low",
+        "channel": 30000,
+        "set": 0.075,
+        "delay": 0
+      },
+      "6": {
+        "type": "high",
+        "severity": "major",
+        "name": "Tank STBD1 Temperature Too High",
+        "channel": 30000,
+        "set": 11.5,
+        "delay": 0
+      },
+      "10050": {
+        "type": "sensor_fault",
+        "severity": "major",
+        "name": "STBD1 Radar Sensor 1 Fault",
+        "channel": 10050
+      },
+      "20050": {
+        "type": "sensor_fault",
+        "severity": "major",
+        "name": "STBD1 Pressure Sensor 1 Fault",
+        "channel": 20050
+      },
+      "30050": {
+        "type": "sensor_fault",
+        "severity": "major",
+        "name": "STBD1 Temperature Sensor 1 Fault",
+        "channel": 30050
+      },
+      "30051": {
+        "type": "sensor_fault",
+        "severity": "major",
+        "name": "STBD1 Temperature Sensor 2 Fault",
+        "channel": 30051
+      },
+      "30052": {
+        "type": "sensor_fault",
+        "severity": "major",
+        "name": "STBD1 Temperature Sensor 3 Fault",
+        "channel": 30052
+      }
+    }
+  }
+}
