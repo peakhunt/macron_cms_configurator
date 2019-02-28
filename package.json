@@ -1,6 +1,6 @@
 {
   "name": "configurator",
-  "version": "0.1.0-rc1",
+  "version": "0.1.0-rc1a",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
