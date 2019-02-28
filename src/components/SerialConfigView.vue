@@ -189,7 +189,7 @@ export default {
         return this.serialCfg.option.address
       },
       set (value) {
-        this.$store.commit('UPDATE_SERIAL_PROTOCOL_OPTION', {
+        this.$store.dispatch('changeSerialProtocolOption', {
           serialCfg: this.serialCfg,
           key: 'address',
           value
@@ -201,7 +201,7 @@ export default {
         return this.serialCfg.option.pollTimeout
       },
       set (value) {
-        this.$store.commit('UPDATE_SERIAL_PROTOCOL_OPTION', {
+        this.$store.dispatch('changeSerialProtocolOption', {
           serialCfg: this.serialCfg,
           key: 'pollTimeout',
           value
@@ -213,7 +213,7 @@ export default {
         return this.serialCfg.option.pollInterval
       },
       set (value) {
-        this.$store.commit('UPDATE_SERIAL_PROTOCOL_OPTION', {
+        this.$store.dispatch('changeSerialProtocolOption', {
           serialCfg: this.serialCfg,
           key: 'pollInterval',
           value

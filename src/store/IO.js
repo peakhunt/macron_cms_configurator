@@ -430,6 +430,10 @@ const actions = {
   delModbusSerialSlave (context, payload) {
     delModbusSerialSlave(context, payload.serialCfg, payload.slave)
   },
+  changeSerialProtocolOption (context, payload) {
+    context.commit('UPDATE_SERIAL_PROTOCOL_OPTION', payload)
+    confgErrorChecks[payload.serialCfg.protocol](context, payload.serialCfg)
+  },
   unmapSlotsForSlave (context, target) {
     for (let key in target.slot) {
       const slot = target.slot[key]
