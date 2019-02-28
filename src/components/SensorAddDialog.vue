@@ -9,32 +9,41 @@
 
       <v-card-text>
         <v-form v-model="valid" ref="ioLocForm">
-          <v-select v-model="ioLoc.root"
-                    :items="ioRoots"
-                    label="IO Top Level"
-                    :rules="[rules.required]"
-                    @change="resetSelection('subRoot')" />
-
-          <v-select v-model="ioLoc.subRoot"
-                    :items="ioSubRoots"
-                    :item-text="subRootItemText"
-                    item-value="port"
-                    label="IO Sub Top Level"
-                    :rules="[rules.required]"
-                    @change="resetSelection('target')" />
-
-          <v-select v-model="ioLoc.target"
-                    :items="ioTargets"
-                    :item-text="targetItemText"
-                    item-value="address"
-                    label="IO Target"
-                    :rules="[rules.required]"
-                    @change="testOut" />
-
-          <v-select v-model="ioLoc.slot"
-                    :items="ioSlots"
-                    label="IO Slots"
-                    :rules="[rules.required]" />
+          <v-container grid-list-md text-xs-center>
+            <v-layout row wrap>
+              <v-flex xs6>
+                <v-select v-model="ioLoc.root"
+                          :items="ioRoots"
+                          label="IO Top Level"
+                          :rules="[rules.required]"
+                          @change="resetSelection('subRoot')" />
+              </v-flex>
+              <v-flex xs6>
+                <v-select v-model="ioLoc.subRoot"
+                          :items="ioSubRoots"
+                          :item-text="subRootItemText"
+                          item-value="port"
+                          label="IO Sub Top Level"
+                          :rules="[rules.required]"
+                          @change="resetSelection('target')" />
+              </v-flex>
+              <v-flex xs6>
+                <v-select v-model="ioLoc.target"
+                          :items="ioTargets"
+                          :item-text="targetItemText"
+                          item-value="address"
+                          label="IO Target"
+                          :rules="[rules.required]"
+                          @change="testOut" />
+              </v-flex>
+              <v-flex xs6>
+                <v-select v-model="ioLoc.slot"
+                          :items="ioSlots"
+                          label="IO Slots"
+                          :rules="[rules.required]" />
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-form>
       </v-card-text>
 
