@@ -3,7 +3,7 @@
     <v-toolbar fixed clipped-left app v-if="!isPrinting">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline text-uppercase">
-        <span>CMS Configurator v{{configuratorVersion}}</span>
+        <span class="text-none">CMS Configurator v{{configuratorVersion}}</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
