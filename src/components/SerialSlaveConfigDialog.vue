@@ -83,7 +83,6 @@ export default {
     dummyClick () {
     },
     onChannelClick (chnlNum) {
-      console.log(`onChannelClick ${chnlNum}`)
       if (chnlNum === -1) {
         return
       }
@@ -91,7 +90,6 @@ export default {
       this.$emit('chnlSelected', chnlNum)
     },
     onAlarmClick (alarmNum) {
-      console.log(`onAlarmClick ${alarmNum}`)
       if (alarmNum === undefined || alarmNum === -1) return
 
       this.$emit('alarmSelected', alarmNum)

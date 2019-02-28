@@ -4,6 +4,8 @@ import Program from './Program'
 
 const dialog = require('electron').remote.dialog
 
+const log = require('electron-log')
+
 const defaultProjectConfig = {
   checksum: '',
   project: {
@@ -181,11 +183,11 @@ const actions = {
       }
 
       listener.$emit(`saveStart`, `saving file`)
-      console.log(`saving to ${filename}`)
+      log.info(`saving to ${filename}`)
 
       context.commit('SAVE_PROJECT')
 
-      console.log(`checksum ${context.state.projectConfig.checksum}`)
+      log.info(`checksum ${context.state.projectConfig.checksum}`)
 
       jsonfile.writeFile(filename, context.state.projectConfig, { spaces: 2 }, (err) => {
         if (err) {
@@ -215,7 +217,7 @@ const actions = {
 
       jsonfile.readFile(filePaths[0], (err, json) => {
         if (err) {
-          console.log(err)
+          log.error(err)
           listener.$emit(`loadEnd`)
           dialog.showErrorBox(`failed to open file`, `couldn't open ${filePaths[0]}`)
           return
@@ -232,14 +234,14 @@ const actions = {
         const csum = calcProjectCSUM(json.project)
 
         if (csum !== json.checksum) {
-          console.log(`csum1 : ${csum}`)
-          console.log(`csum2: ${json.checksum}`)
+          log.info(`csum1 : ${csum}`)
+          log.info(`csum2: ${json.checksum}`)
           listener.$emit(`loadEnd`)
           dialog.showErrorBox(`invalid checksum`, `${filePaths[0]} is not a valid Macron CSM Project file`)
           return
         }
 
-        console.log(`successfully opened file ${filePaths[0]}`)
+        log.info(`successfully opened file ${filePaths[0]}`)
         context.commit('LOAD_NEW_PROJECT', json)
         context.commit('CLEAR_ERRORS', json)
         context.commit('SET_FILE_NAME', filePaths[0])

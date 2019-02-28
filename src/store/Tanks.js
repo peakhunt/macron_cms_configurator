@@ -183,7 +183,6 @@ const mutations = {
 
     // delete channel first
     tndx = tank[payload.sensorType].sensors.indexOf(payload.channel)
-    console.log(`delete sensor channel ${payload.channel} ${tndx}`)
     tank[payload.sensorType].sensors.splice(tndx, 1)
 
     // delete all alarms referencing the sensor channel
@@ -195,7 +194,6 @@ const mutations = {
     })
     alarmList.forEach((alarmNum) => {
       tndx = tank[payload.sensorType].alarms.indexOf(alarmNum)
-      console.log(`delete sensor alarm ${alarmNum} ${tndx}`)
       tank[payload.sensorType].alarms.splice(tndx, 1)
     })
   }
@@ -279,7 +277,6 @@ const actions = {
 
     const ndx = context.getters.tankNdx(payload.tankAfter)
 
-    console.log(`move after ${ndx}`)
     context.commit('ADD_TANK_AFTER', {
       tank: payload.tank,
       ndx

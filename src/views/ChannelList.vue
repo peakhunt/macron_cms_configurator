@@ -83,7 +83,6 @@ export default {
     },
     onWriteToPDF () {
       const self = this
-      console.log('start writing to pdf')
 
       dialog.showSaveDialog({
         title: 'Save Current Project',

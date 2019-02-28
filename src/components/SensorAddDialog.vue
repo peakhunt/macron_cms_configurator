@@ -67,7 +67,6 @@ export default {
       'ioRoots'
     ]),
     ioSubRoots () {
-      console.log(`ioSubRoots ${this.ioLoc.root} ${typeof this.ioLoc.root}`)
       if (this.ioLoc.root === '') return []
 
       const ret = []
@@ -77,13 +76,11 @@ export default {
       return ret
     },
     ioTargets () {
-      console.log(`ioTargets ${this.ioLoc.subRoot} ${typeof this.ioLoc.subRoot}`)
       if (this.ioLoc.subRoot === '') return []
 
       return this.io[this.ioLoc.root][this.ioLoc.subRoot].targets
     },
     ioSlots () {
-      console.log(`ioSlots ${this.ioLoc.target} ${typeof this.ioLoc.target}`)
       if (this.ioLoc.target === '') return []
 
       const targets = this.io[this.ioLoc.root][this.ioLoc.subRoot].targets
@@ -111,7 +108,6 @@ export default {
   },
   methods: {
     testOut (value) {
-      console.log(`testOut ${value} ${this.ioLoc.target}`)
     },
     resetSelection (level) {
       const levelTag = {

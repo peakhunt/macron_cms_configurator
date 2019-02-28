@@ -148,11 +148,10 @@ export default {
 
       switch (range) {
         case 'root':
-          console.log('onSerialClick root')
           return item.name
 
         case 'port':
-          console.log(`onSerialClick port ${item.value.port}`)
+          return item.name
       }
     }
   },

@@ -290,7 +290,6 @@ export default {
     dummyClick () {
     },
     onPanelMoreLess () {
-      console.log(`let's see how it works`)
       this.panel = [!this.panel[0]]
     },
     onSerialProtocolChange (value) {
